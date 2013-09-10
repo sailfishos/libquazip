@@ -7,6 +7,7 @@ License: LGPL
 URL: http://quazip.sourceforge.net/
 Source: %{name}-%{version}.tar.bz2
 BuildRequires: pkgconfig(QtCore)
+BuildRequires: pkgconfig(zlib)
 
 %description
 QuaZIP is a simple C++ wrapper over Gilles Vollant's ZIP/UNZIP package that can
