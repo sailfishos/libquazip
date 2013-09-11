@@ -7,6 +7,7 @@ License: LGPL
 URL: http://quazip.sourceforge.net/
 Source: %{name}-%{version}.tar.bz2
 BuildRequires: pkgconfig(Qt5Core)
+BuildRequires: pkgconfig(Qt5Test)
 BuildRequires: pkgconfig(zlib)
 
 %description
