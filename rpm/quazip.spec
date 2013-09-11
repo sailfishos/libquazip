@@ -6,7 +6,7 @@ Group: System/Libraries
 License: LGPL
 URL: http://quazip.sourceforge.net/
 Source: %{name}-%{version}.tar.bz2
-BuildRequires: pkgconfig(QtCore)
+BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(zlib)
 
 %description
@@ -28,13 +28,13 @@ This packages contains the development files for building QuaZIP-based apps.
 
 %build
 cd quazip
-qmake PREFIX=%{_prefix}
+%qmake5 PREFIX=%{_prefix}
 make
 
 %install
 rm -rf %{buildroot}
 cd quazip
-make install INSTALL_ROOT=%{buildroot}
+%qmake5_install
 
 %post -p /sbin/ldconfig
 
