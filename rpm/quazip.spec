@@ -3,7 +3,7 @@ Summary: ZIP for Qt
 Version: 0.5.1
 Release: 1
 Group: System/Libraries
-License: LGPL
+License: LGPLv2.1+
 URL: http://quazip.sourceforge.net/
 Source: %{name}-%{version}.tar.bz2
 BuildRequires: pkgconfig(Qt5Core)
