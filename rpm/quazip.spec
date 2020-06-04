@@ -1,11 +1,11 @@
 Name: quazip
 Summary: ZIP for Qt
-Version: 0.5.1
+Version: 0.9.1
 Release: 1
-Group: System/Libraries
 License: LGPLv2.1+
-URL: http://quazip.sourceforge.net/
+URL: https://stachenov.github.io/quazip/
 Source: %{name}-%{version}.tar.bz2
+BuildRequires: cmake
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5Test)
 BuildRequires: pkgconfig(zlib)
@@ -25,17 +25,17 @@ be used to access ZIP archives. It uses the Qt toolkit.
 This packages contains the development files for building QuaZIP-based apps.
 
 %prep
-%setup -q
+%autosetup -n %{name}-%{version}/quazip
 
 %build
-cd quazip
-%qmake5 PREFIX=%{_prefix}
-make
+%cmake .
+%make_build
 
 %install
 rm -rf %{buildroot}
-cd quazip
-%qmake5_install
+make install/fast DESTDIR=%{buildroot}
+# Remove static library
+rm %{buildroot}%{_libdir}/libquazip5.a
 
 %post -p /sbin/ldconfig
 
@@ -43,9 +43,11 @@ cd quazip
 
 %files devel
 %defattr(-,root,root,-)
-%{_includedir}/quazip/*.h
-%{_libdir}/libquazip.so
+%{_includedir}/quazip5/*.h
+%{_libdir}/libquazip5.so
+%{_libdir}/pkgconfig/quazip.pc
+%{_libdir}/cmake/QuaZip5/QuaZip5Config.cmake
 
 %files
 %defattr(-,root,root,-)
-%{_libdir}/libquazip.so.*
+%{_libdir}/libquazip5.so.*
