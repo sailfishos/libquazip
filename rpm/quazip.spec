@@ -2,7 +2,7 @@ Name: quazip
 Summary: ZIP for Qt
 Version: 0.9.1
 Release: 1
-License: LGPLv2.1+
+License: LGPLv2+
 URL: https://stachenov.github.io/quazip/
 Source: %{name}-%{version}.tar.bz2
 BuildRequires: cmake
