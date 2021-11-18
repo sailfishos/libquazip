@@ -1,3 +1,3 @@
 [submodule "quazip"]
 	path = quazip
-	url = https://git.sailfishos.org/mirror/quazip.git
+	url = https://github.com/sailfishos-mirror/quazip.git

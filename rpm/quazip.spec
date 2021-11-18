@@ -1,6 +1,6 @@
 Name: quazip
 Summary: ZIP for Qt
-Version: 0.9.1
+Version: 1.2
 Release: 1
 License: LGPLv2+
 URL: https://stachenov.github.io/quazip/
@@ -32,10 +32,7 @@ This packages contains the development files for building QuaZIP-based apps.
 %make_build
 
 %install
-rm -rf %{buildroot}
-make install/fast DESTDIR=%{buildroot}
-# Remove static library
-rm %{buildroot}%{_libdir}/libquazip5.a
+%make_install
 
 %post -p /sbin/ldconfig
 
@@ -43,11 +40,12 @@ rm %{buildroot}%{_libdir}/libquazip5.a
 
 %files devel
 %defattr(-,root,root,-)
-%{_includedir}/quazip5/*.h
-%{_libdir}/libquazip5.so
-%{_libdir}/pkgconfig/quazip.pc
-%{_libdir}/cmake/QuaZip5/QuaZip5Config.cmake
+%{_includedir}/QuaZip*/
+%{_libdir}/libquazip1-qt5.so
+%{_libdir}/pkgconfig/quazip1-qt5.pc
+%{_libdir}/cmake/QuaZip*/*.cmake
 
 %files
 %defattr(-,root,root,-)
-%{_libdir}/libquazip5.so.*
+%license COPYING
+%{_libdir}/libquazip1-qt5.so.*
