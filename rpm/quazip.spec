@@ -7,6 +7,7 @@ URL: https://stachenov.github.io/quazip/
 Source: %{name}-%{version}.tar.bz2
 BuildRequires: cmake
 BuildRequires: pkgconfig(Qt5Core)
+BuildRequires: pkgconfig(Qt5Network)
 BuildRequires: pkgconfig(Qt5Test)
 BuildRequires: pkgconfig(zlib)
 
